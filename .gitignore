@@ -1,0 +1,10 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+venv/
+.venv/
+
+# Zip source files
+*.zip

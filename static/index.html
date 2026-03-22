@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>V2V Communication Demo</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three":          "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/":  "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+        <path d="M2 17l10 5 10-5"/>
+        <path d="M2 12l10 5 10-5"/>
+      </svg>
+      <span class="title">V2V COMMUNICATION DEMO</span>
+    </div>
+    <div class="header-right">
+      <span class="badge demo-badge">● DEMO MODE</span>
+    </div>
+  </header>
+
+  <main class="panels">
+
+    <!-- Camera Feed -->
+    <section class="panel" id="camera-panel">
+      <div class="panel-header">
+        <span>CAMERA FEED</span>
+        <span class="panel-tag status-offline">● OFFLINE</span>
+      </div>
+      <div class="placeholder">
+        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+          <circle cx="12" cy="13" r="4"/>
+          <line x1="2" y1="2" x2="22" y2="22" stroke-dasharray="3 2"/>
+        </svg>
+        <p class="placeholder-text">Camera Feed</p>
+        <p class="placeholder-sub">Not Connected</p>
+      </div>
+    </section>
+
+    <!-- Road View -->
+    <section class="panel" id="road-panel">
+      <div class="panel-header">
+        <span>ROAD VIEW</span>
+        <span class="panel-tag">TOP-DOWN</span>
+      </div>
+      <canvas id="road-canvas"></canvas>
+    </section>
+
+  </main>
+
+  <footer class="legend">
+    <div class="legend-item">
+      <span class="dot ego"></span>
+      <span>Ego (You)</span>
+    </div>
+    <div class="legend-sep">|</div>
+    <div class="legend-item">
+      <span class="dot danger"></span>
+      <span>Danger</span>
+    </div>
+    <div class="legend-sep">|</div>
+    <div class="legend-item">
+      <span class="dot warning"></span>
+      <span>Warning</span>
+    </div>
+    <div class="legend-sep">|</div>
+    <div class="legend-item">
+      <span class="dot normal"></span>
+      <span>Normal</span>
+    </div>
+  </footer>
+
+  <script type="module" src="/static/app.js"></script>
+</body>
+</html>
